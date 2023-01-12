@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #271A45;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --primary-color: #271A45;
+    --switch-bg-url: url(./assets/360.svg);
+}
+
+body {
+    background: #D9CDF7;
+}
+
+#product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#switch button {
+    width: 33px;
+    height: 23px;
+    background: #271A45 var(--360-button) o-repeat center;
+}
+
+h1 {
+    font-family: 'Crimson Pro';
+}
