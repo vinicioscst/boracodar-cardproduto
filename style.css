@@ -4,11 +4,30 @@
     box-sizing: border-box;
     color: #271A45;
     font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
     --primary-color: #271A45;
     --switch-bg-url: url(./assets/360.svg);
+    --switch-width: 33px;
+    --switch-height: 23px;
+    --switch-position-left: 81.51%;
+    --switch-position-right: 11.14%;
+    --switch-position-top: 3.8%;
+    --switch-position-bottom: 86.12%;
+}
+
+.view360 {
+    --switch-bg-url: url(./assets/close.svg);
+    --switch-width: 16px;
+    --switch-height: 16px;
+    --switch-position-left: 83%;
+    --switch-position-right: 11.14%;
+    --switch-position-top: 5%;
+    --switch-position-bottom: 86.12%;
 }
 
 body {
@@ -16,18 +35,98 @@ body {
 }
 
 #product {
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    place-content: center;
+    gap: 13px;
+}
+
+#product-img {
+    position: relative;
 }
 
 #switch button {
-    width: 33px;
-    height: 23px;
-    background: #271A45 var(--360-button) o-repeat center;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    background: transparent var(--switch-bg-url) no-repeat center;
+    border: 0px;
+    position: absolute;
+    left: var(--switch-position-left);
+    right: var(--switch-position-right);
+    top: var(--switch-position-top);
+    bottom: var(--switch-position-bottom);
+}
+
+#product-img img {
+    width: 449px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 100%;
 }
 
 h1 {
     font-family: 'Crimson Pro';
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: none;
 }
+
+h2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+#product-info button {
+    margin-top: 20px;
+    border: 0.5px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: transparent;
+    transition: background 0.2s;
+    transition: color 0.2s;
+}
+
+#product-info button:hover {
+    background: var(--primary-color);
+    color: #D9CDF7;
+}
+
+
+/* media queries */
+
+@media (max-width: 700px) {
+    #product {
+        flex-direction: column;
+    }
+
+    #product-img img {
+        width: 100%;
+    }
+
+    #product-info .info-text {
+        margin: auto;
+    }
+
+    #product-info button {
+        margin: 20px 0 auto;
+    }
+
+  }
